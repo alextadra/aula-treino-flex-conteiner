@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funfamentos - flex-shrink</title>
+    <style>
+        .flex-container{
+            display: flex;
+            border: 1px solid black;
+            max-width: 350px;
+            margin-bottom: 10px;
+        }
+
+        .item{
+            background-color: coral;
+            margin: 5px;
+            font-size: 24px;
+            text-align: center;
+        }      /*propriedade para capacidade de redução ou compressão de 
+                 um item*/
+
+        .s-0{         /*nesse caso, não permitimos a diminuição do espaçamento*/
+            flex-shrink: 0;         /*usamos f-basis pra testar e ver o item espassando do container*/
+            flex-basis: 100px;
+        }
+        .s-1{               /*nesse exemplo, se incluirmos itens, eles serão*/
+            flex-shrink: 1;/*comprimidos até o limite max. do nosso container*/    
+        }
+
+        .s-2{       /*compressão em 2 tal qual seja possível*/
+            flex-shrink: 2;
+            flex-basis: 100px;
+        }
+
+        .s-3{
+            flex-shrink: 3;
+            flex-basis: 100px;
+        }
+        .fg-1{
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <p>flex-shrink 1</p>            
+    <div class="flex-container">
+    <div class="item s-1 fg-1">A</div>
+    <div class="item s-1 fg-1">B</div>
+    <div class="item s-1 fg-1">C</div>
+    <div class="item s-1 fg-1">D</div>
+    <div class="item s-1 fg-1">E</div>
+</div>
+
+<p>flex-shrink 1</p>
+    <div class="flex-container">
+    <div class="item s-1 fg-1">A</div>
+    <div class="item s-1 fg-1">Brasil é o primeiro </div>
+    <div class="item s-1 fg-1">C</div>
+    <div class="item s-1 fg-1">D</div>
+    
+</div>
+
+<p>flex-shrink 0 basis 100px</p>
+    <div class="flex-container">
+    <div class="item s-0 fg-1">A</div>
+    <div class="item s-0 fg-1">Brasil campeão</div>
+    <div class="item s-0 fg-1">Cucaracha</div>
+    <div class="item s-0 fg-1">Cucaracha</div>
+    <div class="item s-0 fg-1">D</div>   
+</div>
+
+<p>flex-shrink mix / basis 100px</p>
+    <div class="flex-container">
+    <div class="item s-1 fg-1">Amanhã estarei ai</div>
+    <div class="item s-2 fg-1">Brasil campeão</div>
+    <div class="item s-2 fg-1">Cai a casa no chão da rua</div>
+    <div class="item s-3 fg-1">Duvido que chegue a tanto</div>   
+</div>
+</body>
+</html>

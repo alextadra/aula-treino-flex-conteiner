@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos - alingn-content</title>
+
+<style>
+    .container{
+        height: 350px;         
+        max-width: 300px;        
+        margin: 0 auto;  
+        display: flex;  /*para essas orientações teremos algumas regras:*/
+        flex-wrap: wrap;  /*<- quebra de linhas e*/
+        border: 1px solid black;   /*altura do container maior q a soma 
+                                        das linhas dos itens*/
+    }       
+    .item{
+        background-color: orangered;
+        padding: 0 5px;
+        margin: 5px;
+        flex: 1;
+        text-align: center;
+        color: white; 
+        border: 2px solid black;
+    }
+
+    .stretch{ /*crescimento igualitario dos itens (já é padrão essa config)*/
+        align-content: stretch;
+    }
+
+    .center{ 
+        align-content: center;
+    }   /*comprime o coteúdo  para distribuir ao centro e
+    assim distribui os itens de forma proporcional no container*/
+    .start{
+        align-content: flex-start;
+    } /*comprime op conteúdo e leva para a parte de cima*/
+
+    .end{
+        align-content: flex-end;
+    }
+    .around{
+        align-content: space-around;
+    }               /*os meios vazios são as somas das margens 
+                      + conteúdo comprimido*/
+    .between{
+        align-content: space-between;
+    }           /*conteúdo próximo as margens*/
+</style>
+</head>
+<body>
+    <p>stretch</p>
+    <div class="container stretch">
+        <div class="item">Loren ipsum is therefore always </div>
+        <div class="item">Loren ipsum is</div>
+        <div class="item">Loren ipsum is therefore always 
+free from repetition, inject homour, os non-characteristic words etc</div>
+        <div class="item">Loren ipsum is therefore </div>
+        <div class="item">Loren ipsum is therefore </div>
+        <div class="item">Loren ipsum is therefore </div>
+        <div class="item">Loren ipsum is therefore </div>
+    </div>
+
+    <p>center</p>
+    <div class="container center">
+        <div class="item">Loren ipsum is therefore always </div>
+        <div class="item">Loren ipsum is</div>
+        <div class="item">Loren ipsum is therefore free from repetition,
+             inject homour, os non-characteristic </div>
+        <div class="item">Loren ipsum is therefore non-characteristic words  </div>
+        <div class="item">Loren ipsum is therefore  </div>
+        <div class="item">Loren ipsum is therefore </div>
+        <div class="item">Loren ipsum is therefore </div>
+    </div>
+
+    <p>flex-start</p>
+    <div class="container start">
+        <div class="item">Loren ipsum is therefore always from </div>
+        <div class="item">Loren ipsum is therefor</div>
+        <div class="item">Loren ipsum is therefore always free  </div>
+        <div class="item">Loren ipsum is therefore non-characteristic words  </div>
+        <div class="item">Loren ipsum is therefore  </div>
+        <div class="item">Loren ipsum is therefore </div>
+        <div class="item">Loren ipsum is therefore </div>
+    </div>
+
+    <p>flex-end</p>
+    <div class="container end">
+        <div class="item">Loren ipsum is therefore always from </div>
+        <div class="item">Loren ipsum is therefor</div>
+        <div class="item">Loren ipsum is therefore always free  </div>
+        <div class="item">Loren ipsum is therefore non-characteristic words  </div>
+        <div class="item">Loren ipsum is therefore  </div>
+        <div class="item">Loren ipsum is therefore </div>
+        <div class="item">Loren ipsum is therefore </div>
+    </div>
+
+    <p>space-around</p>
+    <div class="container around">
+        <div class="item">Loren ipsum is therefore always from </div>
+        <div class="item">Loren ipsum is therefor</div>
+        <div class="item">Loren ipsum is therefore always free  </div>
+        <div class="item">Loren ipsum is therefore non-characteristic words  </div>
+        <div class="item">Loren ipsum is therefore  </div>
+        <div class="item">Loren ipsum is therefore </div>
+        <div class="item">Loren ipsum is therefore </div>
+    </div>
+
+    <p>space-between</p>
+    <div class="container between">
+        <div class="item">Loren ipsum is therefore always from </div>
+        <div class="item">Loren ipsum is therefor</div>
+        <div class="item">Loren ipsum is therefore always free  </div>
+        <div class="item">Loren ipsum is therefore non-characteristic words  </div>
+        <div class="item">Loren ipsum is therefore  </div>
+        <div class="item">Loren ipsum is therefore </div>
+        <div class="item">Loren ipsum is therefore </div>
+    </div>
+</body>
+</html>

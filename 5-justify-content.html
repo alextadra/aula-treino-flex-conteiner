@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos Justify-content</title>
+<style>
+    .container{
+        max-width: 400px;
+        border: 1px solid black;
+        margin: 0;
+        display: flex;                              /*a altura é aplicada no container*/
+        margin-bottom: 10px;
+    }
+
+    .item{
+        background-color: blueviolet;
+        margin: 5px;
+        text-align: center;
+        color: white;
+    }         /*o objetivo e distribuir os espaçamentos restante dos itens
+            e fazer alinhamento de acordo o que pretendemos na interface*/
+    .flex-start{
+        justify-content: flex-start;
+    }
+
+    .flex-end{
+        justify-content: flex-end;
+    }
+
+    .flex-center{ /*bordas a dir e esq identicas*/
+        justify-content: center;
+    }
+
+    .space-between{ /*elementos de inicio e final vão próximos as margens e assim se inicia a distribuição*/
+        justify-content: space-between;
+    }
+
+    .space-araund{ 
+        justify-content: space-around;
+    }       /*os vazios entre os itens serão o dobro do espaçamento 
+            inicial e final*/
+
+    .column{
+        flex-direction: column;
+        min-height: 200px;
+    }
+
+</style>
+</head>
+<body>
+    <h1>row</h1>
+    <h1>flex-start</h1>
+    <section class="container flex-start">
+        <div class="item">1</div>
+        <div class="item">item 2</div>
+        <div class="item">outro item</div>
+    </section>
+
+    <h1>flex-end</h1>
+    <section class="container flex-end">
+        <div class="item">1</div>
+        <div class="item">item 2</div>
+        <div class="item">outro item</div>
+    </section>
+
+    <h1>flex-center</h1>
+    <section class="container flex-center">
+        <div class="item">1</div>
+        <div class="item">item 2</div>
+        <div class="item">outro item</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </section>
+
+    <h1>space-between</h1>
+    <section class="container space-between">
+        <div class="item">1</div>
+        <div class="item">item 2</div>
+        <div class="item">outro item</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </section>
+
+    <h1>space-araund</h1>
+    <section class="container space-araund">
+        <div class="item">1</div>
+        <div class="item">item 2</div>
+        <div class="item">outro item</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </section>
+
+    <h2>COLUMN</h2> 
+
+    <h1>flex-start (column)</h1>
+    <section class="container flex-start column">
+        <div class="item">1</div>
+        <div class="item">item 2</div>
+        <div class="item">outro item</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </section>
+
+    <h1>flex-end (column)</h1>
+    <section class="container flex-end column">
+        <div class="item">1</div>
+        <div class="item">item 2</div>
+        <div class="item">outro item</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </section>
+
+    <h1>center </h1>
+    <section class="container flex-center column">
+        <div class="item">1</div>
+        <div class="item">item 2</div>
+        <div class="item">outro item</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </section>
+
+    <h1>space-between</h1>
+    <section class="container space-between column">
+        <div class="item">1</div>
+        <div class="item">item 2</div>
+        <div class="item">outro item</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </section>
+
+    <h1>space-araund</h1>
+    <section class="container space-araund column">
+        <div class="item">1</div>
+        <div class="item">item 2</div>
+        <div class="item">outro item</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </section>
+</body>
+</html>
